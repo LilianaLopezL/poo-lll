@@ -17,6 +17,19 @@ public class PooLll {
     public static void main(String[] args) {
         // TODO code application logic here
         System.out.println("Hola Mundo");
+        
+        //Tenemos que generar los objetos de las clases anteriores
+        
+        Usuario x=new Usuario();
+        x.altura=1.50f;
+        x.peso=46f;
+        Imc algo=new Imc();
+        algo.u=x;
+        //Calculamos el imc a traves de su objeto.
+        
+        System.out.println(algo.calcular());
+        
+
     }
     
 }
