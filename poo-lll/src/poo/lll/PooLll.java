@@ -21,8 +21,8 @@ public class PooLll {
         //Tenemos que generar los objetos de las clases anteriores
         
         Usuario x=new Usuario();
-        x.altura=1.50f;
-        x.peso=46f;
+        x.setAltura(1.50f);
+        x.setPeso(46);
         Imc algo=new Imc();
         algo.u=x;
         //Calculamos el imc a traves de su objeto.
