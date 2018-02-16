@@ -3,7 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package poliejemplo;
+
+import java.util.*;
+
 
 /**
  *
@@ -13,8 +17,7 @@ public class Mascotas {
     
     public static void main(String[] args) 
     {
-        ComportamientoAnimal animales[]=new hacerRuido[10];
-        
+        Animal animales[]=new Animal[12];
         
         //PRIMERO GENERAMOS A LOS GATOS
         
@@ -35,14 +38,38 @@ public class Mascotas {
         animales[8]=new Pollo();
         animales[9]=new Pollo();
         
-        //LA MAGIA DEL POLIMIRFISMO
+         //GENERAMOS LOS RATONES
         
-        for (ComportamientoAnimal animal:animales)
+        animales[10]=new Raton();
+        animales[11]=new Raton();
+        
+        ServicioAnimales s= new ServicioAnimales();
+        
+        //LA MAGIA DEL POLIMORFISMO
+        
+        for (Animal a:animales)
         {
-            System.out.println(animal.hacerRuido());
+            s.servicioHacerRuido((ComportamientoAnimal)a);
         }
         
+        //VAMOS A GENERAR UN ArrayList Y PONER ALLI ALGUNOS ANIMALES
+        //ARREGLO MUTABLE
+        
+        ArrayList<Animal> animalitos= new ArrayList<>(); //ARREGLO GENÉRICO
        
+        animalitos.add(new Pollo()); // CREACION DE OBJETOS DE FORMA ANÓNIMA
+        animalitos.add(new Raton());
+        animalitos.add(new Perro());
+        animalitos.add(new Pollo());
+        animalitos.add(new Gato());
+        
+        for(Animal a:animalitos)
+        {
+            s.servicioHacerRuido((ComportamientoAnimal)a);
+        }
+        
+        animalitos.get(0).setEdad(1);
+        System.out.println(animalitos.get(0).getEdad());
     }
     
 }
