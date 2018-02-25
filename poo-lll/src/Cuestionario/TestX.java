@@ -22,7 +22,7 @@ public class TestX extends javax.swing.JFrame {
     public TestX() {
         initComponents();
         
-        Opcion op1=new Opcion("Grasa",false);
+       Opcion op1=new Opcion("Grasa",false);
        Opcion op2=new Opcion("Contaminación",false);
        Opcion op3=new Opcion("Sol",false);
        Opcion op4=new Opcion("Azúcar",true);
