@@ -5,6 +5,9 @@
  */
 package poo.lll;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author T-102
@@ -89,10 +92,17 @@ public class Ventanita extends javax.swing.JFrame {
     private void buttonCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCalcularActionPerformed
 
         
-//Pedimos el valor al texto peso
+        try {
+            //Pedimos el valor al texto peso
+            
+            float peso= Float.parseFloat(textoPeso.getText());
+            float altura=Float.parseFloat(textAltura.getText());
+            
+//VALIDAR PESO Y ALTURA
 
-float peso= Float.parseFloat(textoPeso.getText());
-float altura=Float.parseFloat(textAltura.getText());
+ValidarCantidades.validarValorNegativo(altura);
+ValidarCantidades.validarValorNegativo(peso);
+
 
 //Creamos nuestra entidad
 
@@ -112,7 +122,10 @@ etiquetaResultado.setText(x.calcular());
 
 
 
-        // TODO add your handling code here:
+// TODO add your handling code here:
+        } catch (NumeroNegativoException ex) {
+            etiquetaResultado.setText(ex.getMessage());
+        }
     }//GEN-LAST:event_buttonCalcularActionPerformed
 
     /**
