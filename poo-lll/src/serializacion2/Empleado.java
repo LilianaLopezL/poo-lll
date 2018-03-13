@@ -3,11 +3,16 @@ package serializacion2;
 
 public class Empleado 
 {
-    private String Nombre;
-    private String ApPaterno;
-    private String ApMaterno;
-    private Integer SueldoBase;
-    private String Departamento;
+     String Nombre;
+     String ApPaterno;
+     String ApMaterno;
+     Float SueldoBase;
+     String Departamento;
+
+   @Override
+    public String toString() {
+        return "Empleado{" + "Nombre=" + Nombre + ", ApPaterno=" + ApPaterno + ", ApMaterno=" + ApMaterno + ", SueldoBase=" + SueldoBase + ", Departamento=" + Departamento + '}';
+    }
 
     public String getNombre() {
         return Nombre;
@@ -33,11 +38,11 @@ public class Empleado
         this.ApMaterno = ApMaterno;
     }
 
-    public Integer getSueldoBase() {
+    public Float getSueldoBase() {
         return SueldoBase;
     }
 
-    public void setSueldoBase(Integer SueldoBase) {
+    public void setSueldoBase(Float SueldoBase) {
         this.SueldoBase = SueldoBase;
     }
 
@@ -49,7 +54,7 @@ public class Empleado
         this.Departamento = Departamento;
     }
 
-    public Empleado(String Nombre, String ApPaterno, String ApMaterno, Integer SueldoBase, String Departamento) {
+    public Empleado(String Nombre, String ApPaterno, String ApMaterno, Float SueldoBase, String Departamento) {
         this.Nombre = Nombre;
         this.ApPaterno = ApPaterno;
         this.ApMaterno = ApMaterno;

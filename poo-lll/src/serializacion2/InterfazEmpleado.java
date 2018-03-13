@@ -193,6 +193,16 @@ public class InterfazEmpleado extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        
+        Empleado e1= new Empleado("Liliana","Lopez","Lopez",12345F, "Sistemas");
+        System.out.println(e1);
+        
+       /* System.out.println("Nombre: "+e1.getNombre());
+        System.out.println("Paterno: "+e1.getApPaterno());
+        System.out.println("Materno: "+e1.getApMaterno());
+        System.out.println("Sueldo Base: "+e1.getSueldoBase());
+        System.out.println("Departamento: "+e1.getDepartamento());*/
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
