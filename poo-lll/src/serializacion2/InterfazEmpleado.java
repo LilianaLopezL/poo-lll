@@ -52,13 +52,24 @@ public class InterfazEmpleado extends javax.swing.JFrame {
 
         jLabel2.setText("Nombre:");
 
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+
         jLabel3.setText("Paterno:");
 
         jLabel4.setText("Materno:");
 
         jLabel5.setText("Sueldo Base:");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "$2000", "$3000", "$4000", "$5000" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2000", "3000", "4000", "5000" }));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
 
         jLabel6.setText("Departamento:");
 
@@ -194,8 +205,17 @@ public class InterfazEmpleado extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         
-        Empleado e1= new Empleado("Liliana","Lopez","Lopez",12345F, "Sistemas");
+        String nombre=(jTextField1.getText());
+        String paterno=(jTextField2.getText());
+        String materno=(jTextField3.getText());
+        String sueldo=(String) jComboBox1.getSelectedItem();
+        Float sueldo_b =  Float.parseFloat(sueldo);
+        String depto=(String) jComboBox2.getSelectedItem();
+        
+ 
+        Empleado e1= new Empleado(nombre,paterno,materno,sueldo_b,depto);
         System.out.println(e1);
+        
         
        /* System.out.println("Nombre: "+e1.getNombre());
         System.out.println("Paterno: "+e1.getApPaterno());
@@ -204,6 +224,14 @@ public class InterfazEmpleado extends javax.swing.JFrame {
         System.out.println("Departamento: "+e1.getDepartamento());*/
         
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox1ActionPerformed
 
     /**
      * @param args the command line arguments

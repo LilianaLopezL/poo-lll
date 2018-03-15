@@ -45,9 +45,9 @@ public void guardar(Empleado e)
     oos.writeObject(empleados);
     System.out.println("Objeto Guardado con Éxito !!!");   
     }
-    catch(Exception e)
+    catch(Exception ex)
     {   
-        System.out.println(e.getMessage());  
+        System.out.println(ex.getMessage());  
     }
 }
 
@@ -93,3 +93,5 @@ return empleados;
 
 
 }
+
+//GUARDAR 1 O MAS USURIOS DE LAS INTERFACES Y MOSTRARLOS EN LA TABLA DE EMPLEADOS
