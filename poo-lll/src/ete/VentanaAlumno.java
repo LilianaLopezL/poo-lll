@@ -6,6 +6,7 @@
 package ete;
 
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -13,11 +14,20 @@ import javax.swing.JOptionPane;
  */
 public class VentanaAlumno extends javax.swing.JFrame {
 
+    
+    DefaultTableModel md;
+    String data[][]={};
+    String cabeza[]={"Nombre","A.Paterno","A.Materno","No.Cuenta","Examen","Calificacion"};
+    
     /**
      * Creates new form VentanaAlumno
      */
     public VentanaAlumno() {
         initComponents();
+        
+        md=new DefaultTableModel(data, cabeza);
+        jTable1.setModel(md);
+        
     }
 
     /**
@@ -169,14 +179,62 @@ public class VentanaAlumno extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         Examen examen=new Examen(tExamenNombre.getText(),Float.parseFloat(tCalificacion.getText()));
-        Alumno alumno = new Alumno(tNombre.getText(),tPaterno.getText(),tMaterno.getText(),Long.parseLong(tCuenta.getText()),examen);
+        
+        Alumno alumno = new Alumno(tNombre.getText(),tPaterno.getText(),tMaterno.getText(),Long.parseLong(tCuenta.getText()),Float.parseFloat(tCalificacion.getText()));
         
         PersistenciaAlumno p= new PersistenciaAlumno();
         p.guardar(alumno);
         JOptionPane.showMessageDialog(this,"Guardo con exito","confirmar",1);
        
+        PersistenciaAlumno m=new PersistenciaAlumno();
+        m.leerTodos();
+        String datos[]={tCuenta.getText(),tNombre.getText(),tPaterno.getText(),tMaterno.getText(),tExamenNombre.getText(),tCalificacion.getText()};
+        md.addRow(datos);
+        
+        // Borrar 
+        tExamenNombre.setText(null);
         tCalificacion.setText(null);
         tCuenta.setText(null);
+        tNombre.setText(null);
+        tPaterno.setText(null);
+        tMaterno.setText(null);
+        
+        System.out.println(p);
+
+        
+        
+        /*
+        
+         Examen examen=new Examen(tExamenNombre.getText(), 
+                tCalificacion.getText());
+        
+        Alumno alumno=new Alumno(tCuenta.getText(),tNombre.getText(),
+                                tPaterno.getText(),tMaterno.getText(),examen);
+        
+        //finalmemte guardamos
+        
+        PersistenciaAlumno p=new PersistenciaAlumno();
+        p.guardar(alumno);
+        JOptionPane.showMessageDialog(this,"Guardado con exito","confirmar",1);
+        
+        PersistenciaAlumno m=new PersistenciaAlumno();
+        m.leerTodos();
+        String datos[]={tCuenta.getText(),tNombre.getText(),tPaterno.getText(),tMaterno.getText(),tExamenNombre.getText(),tCalificacion.getText()};
+        md.addRow(datos);
+        
+        // Borrar 
+        tExamenNombre.setText(null);
+        tCalificacion.setText(null);
+        tCuenta.setText(null);
+        tNombre.setText(null);
+        tPaterno.setText(null);
+        tMaterno.setText(null);
+        
+        System.out.println(p);
+        
+        */
+        
+        
         
         
     }//GEN-LAST:event_jButton1ActionPerformed

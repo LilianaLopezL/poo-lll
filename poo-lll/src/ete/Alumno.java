@@ -19,6 +19,11 @@ public class Alumno  implements Serializable
     private Long nocuenta;
     private Float calificacion;
 
+    @Override
+    public String toString() {
+        return "Alumno{" + "nombre=" + nombre + ", apP=" + apP + ", apM=" + apM + ", nocuenta=" + nocuenta + ", calificacion=" + calificacion + '}';
+    }
+
     public String getNombre() {
         return nombre;
     }

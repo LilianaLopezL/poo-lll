@@ -16,6 +16,11 @@ public class Examen implements Serializable
     private String nombre;
     private float calificacion;
 
+    @Override
+    public String toString() {
+        return "Examen{" + "nombre=" + nombre + ", calificacion=" + calificacion + '}';
+    }
+
     public String getNombre() {
         return nombre;
     }
